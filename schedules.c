@@ -64,8 +64,8 @@ for(i = 0; i < 12; i++){
   while(cp != NULL){
   
   printf("process id = %d \n", cp->id);
-  printf("\t service time = %8.4f \n", cp->timeUntilNextProcess);
-  printf();
+  printf("\t service time = %8.4f \n", cp->timeToService);
+  printf("\t interarrival time = %8.4f \n", cp->timeUntilNextProcess);
   cp = cp->np;
   
   }//while
