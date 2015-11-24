@@ -46,12 +46,29 @@ for(i = 0; i < 12; i++){
     (ProcessRecordPointer) //cast as PRP
     malloc( //allocates a certain amount of memory and returns a pointer to the memory specified
     sizeof(ProcessRecord)) //returns the size needed to store the process record
-    cp -> id = i;
+    cp->id = i;
     
     double r = ((double) rand())/RAND_MAX;
+    cp->timeToService = -MST * log(r);
     
-    cp -> 
+    r = ((double) rand())/RAND_MAX;
+    cp->timeUntilNextProcess = -MIAT * log(r);
     
+    cp->np=pp;
+    pp=cp;
   }//for
+  rootPointer = cp;
 
+
+  cp = rootPointer;
+  while(cp != NULL){
+  
+  printf("process id = %d \n", cp->id);
+  printf("\t service time = %8.4f \n", cp->timeUntilNextProcess);
+  printf();
+  cp = cp->np;
+  
+  }//while
+
+exit(0);
 }//main
