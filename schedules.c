@@ -22,8 +22,8 @@ typedef struct process ProcessRecord, *ProcessRecordPointer;
 //time until next process starts
 struct process{
   int id;
-  double timeToService
-  double timeUntilNextService
+  double timeToService;
+  double timeUntilNextProcess;
   ProcessRecordPointer np;
 }; //struct
 
@@ -45,7 +45,7 @@ for(i = 0; i < 12; i++){
     cp = 
     (ProcessRecordPointer) //cast as PRP
     malloc( //allocates a certain amount of memory and returns a pointer to the memory specified
-    sizeof(ProcessRecord)) //returns the size needed to store the process record
+    sizeof(ProcessRecord)); //returns the size needed to store the process record
     cp->id = i;
     
     double r = ((double) rand())/RAND_MAX;
@@ -70,7 +70,7 @@ for(i = 0; i < 12; i++){
   
   }//while
 
-printf("..it is the chief characteristic of the religion of science, that it works.. \n                                         -Issac Asimov, Foundation(1951)")
+printf("..it is the chief characteristic of the religion of science, that it works.. \n                                         -Issac Asimov, Foundation(1951)");
 //                                                      
 exit(0);
 }//main
