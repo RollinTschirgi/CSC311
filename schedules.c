@@ -1,5 +1,5 @@
-// "..the chief characteristic of the religion of science,(is) that it works.."
-                                                      -Issac Asimov, Foundation(1951)
+// "..it is the chief characteristic of the religion of science, that it works.."
+//                                                      -Issac Asimov, Foundation(1951)
 //Rollin Tschirgi
 //CSC311
 //23/Nov/2016
@@ -70,5 +70,7 @@ for(i = 0; i < 12; i++){
   
   }//while
 
+printf("..it is the chief characteristic of the religion of science, that it works.. \n                                         -Issac Asimov, Foundation(1951)")
+//                                                      
 exit(0);
 }//main
