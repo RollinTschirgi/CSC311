@@ -27,6 +27,12 @@ struct process{
   ProcessRecordPointer np;
 }; //struct
 
+//Globals####################################
+ProcessRecordPointer rootPointer = NULL;
+ProcessRecordPointer pp = NULL;
+ProcessRecordPointer cp = NULL;
+//###########################################
+
 int main(int argc, char** argv){
 
 //time is measured in seconds
@@ -35,9 +41,7 @@ time_t t = time(NULL);
 //seed with random number generator
 srand(t);
 
-ProcessRecordPointer rootPointer = NULL;
-ProcessRecordPointer pp = NULL;
-ProcessRecordPointer cp = NULL;
+
 
 int i;
 for(i = 0; i < 12; i++){
@@ -46,7 +50,7 @@ for(i = 0; i < 12; i++){
     (ProcessRecordPointer) //cast as PRP
     malloc( //allocates a certain amount of memory and returns a pointer to the memory specified
     sizeof(ProcessRecord)); //returns the size needed to store the process record
-    cp->id = i;
+    cp->id = i;//set id to 1 at location cp
     
     double r = ((double) rand())/RAND_MAX;
     cp->timeToService = -MST * log(r);
@@ -58,8 +62,6 @@ for(i = 0; i < 12; i++){
     pp=cp;
   }//for
   rootPointer = cp;
-
-
   cp = rootPointer;
   while(cp != NULL){
   
